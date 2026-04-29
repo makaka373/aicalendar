@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Календарь</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="logo">Cal<span>endar</span></div>
+
+  <div class="mini-cal">
+    <div class="mini-header">
+      <button id="mp">‹</button>
+      <h3 id="mini-label"></h3>
+      <button id="mn">›</button>
+    </div>
+    <div class="mini-days">
+      <div class="mini-dn">Пн</div><div class="mini-dn">Вт</div><div class="mini-dn">Ср</div>
+      <div class="mini-dn">Чт</div><div class="mini-dn">Пт</div><div class="mini-dn">Сб</div><div class="mini-dn">Вс</div>
+    </div>
+    <div id="mini-grid" class="mini-days" style="gap:2px;margin-top:4px;"></div>
+  </div>
+
+  <div class="upcoming">
+    <h3>Ближайшие</h3>
+    <div class="upcoming-list" id="upcoming-list"></div>
+  </div>
+</aside>
+
+<main class="main">
+  <div class="main-header">
+    <h1 id="main-label"></h1>
+    <div class="nav-btns">
+      <button class="today-btn" id="go-today">Сегодня</button>
+      <button id="prev">←</button>
+      <button id="next">→</button>
+    </div>
+  </div>
+  <div class="cal-grid-wrap">
+    <div class="week-labels">
+      <div class="wl">ПН</div><div class="wl">ВТ</div><div class="wl">СР</div>
+      <div class="wl">ЧТ</div><div class="wl">ПТ</div><div class="wl">СБ</div><div class="wl">ВС</div>
+    </div>
+    <div class="cal-grid" id="cal-grid"></div>
+  </div>
+</main>
+
+<div class="panel">
+  <div class="panel-top">
+    <h2 id="panel-title">Выберите день</h2>
+    <div class="day-sub" id="panel-sub"></div>
+  </div>
+  <div class="event-list" id="event-list"></div>
+  <div class="add-wrap" id="add-wrap" style="display:none;">
+    <input id="ev-in" placeholder="Добавить событие..." />
+    <button id="ev-add">+</button>
+  </div>
+  <div class="divider"></div>
+  <div class="ai-tools">
+    <div class="tools-label">ИИ инструменты</div>
+    <div class="tools-btns">
+      <button id="btn-parse">Разбор текста</button>
+      <button id="btn-plan">Планировать день</button>
+    </div>
+    <div id="parse-area" style="display:none;">
+      <textarea id="parse-input" placeholder="Вставьте письмо, сообщение или заметку — ИИ найдёт события и добавит в календарь..."></textarea>
+      <button id="btn-analyze">Найти события</button>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="chat-section">
+    <div class="chat-label">ИИ ассистент</div>
+    <div class="chat-msgs" id="chat-msgs">
+      <div class="bubble ai">Привет! Используйте инструменты выше или спросите меня о планировании.</div>
+    </div>
+    <div class="chat-input-row">
+      <input id="chat-in" placeholder="Спросите ассистента..." />
+      <button id="chat-btn">↑</button>
+    </div>
+  </div>
+</div>
+
+<script src="calendar.js"></script>
+<script src="chat.js"></script>
+</body>
+</html>
